@@ -1,5 +1,5 @@
 context:
-  version: "0.9.10"
+  version: "0.10.0"
 
 package:
   name: pyprms
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pyprms/pyprms-${{ version }}.tar.gz
-  sha256: 8559e47436db01553c3e13fb52fa18237993e30c5ef5ccf1ab32faca2f29ca19
+  sha256: 8738ceebbe44bac02a9771c23ae20ea8a9c26ddf7492b821a85c58282a1ed3bc
 
 build:
   noarch: python
@@ -29,6 +29,7 @@ requirements:
     - netcdf4 !=1.7.4
     - networkx >=2
     - numpy
+    - packaging
     - pandas
     - pyproj
     - rich
@@ -39,7 +40,7 @@ requirements:
     - sphinx-autodoc-typehints
     - sphinx-book-theme
     - xarray
-    - zarr <3
+    - zarr
 
 tests:
   - python:
@@ -47,8 +48,8 @@ tests:
         - pyPRMS
       pip_check: true
       python_version:
-       - ${{ python_min }}.*
-       - "*"
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   homepage: https://github.com/DOI-USGS/pyPRMS
